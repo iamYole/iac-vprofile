@@ -45,10 +45,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Delete Cluster
-        id: delete-cluster
-        if: github.ref == 'refs/heads/destroy' && github.event_name =='push'
-        run: kubectl delete -f  https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.3/deploy/static/provider/cloud/deploy.yml
+      # - name: Delete Cluster
+      #   id: delete-cluster
+      #   if: github.ref == 'refs/heads/destroy' && github.event_name =='push'
+      #   run: kubectl delete -f  https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.3/deploy/static/provider/cloud/deploy.yml
 
       - name: Terraform Init
         id: init
